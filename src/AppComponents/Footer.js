@@ -30,6 +30,8 @@ export const Footer = () => {
     };
   }, []);
 
+  const year = new Date().getFullYear();
+
   return (
     <div className="web-foot">
       <div
@@ -89,7 +91,7 @@ export const Footer = () => {
             style={{ color: "white" }}
             to="https://github.com/yashlikescode/react-website"
           >
-            Copyright © 2023 Yashasvi
+            Copyright © {year} Yashasvi
           </Link>
         </span>
         <div

@@ -99,7 +99,7 @@ export const Header = () => {
                     className="nav-link active btn"
                     aria-current="page"
                   >
-                    Internships
+                    Experience
                     <span className="keyhelp">2</span>
                   </Link>
                 </li>

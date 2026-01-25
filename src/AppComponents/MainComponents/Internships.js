@@ -22,9 +22,9 @@ export const Internships = () => {
   }, []); // Empty dependency array means this effect runs once after the first render
 
   return (
-    <div id="whole-experience">
+    <div id="whole-internships">
       <h2
-        id="experiences-section"
+        id="internships-section"
         style={{ paddingLeft: "10%", paddingRight: "10%", paddingTop: "6%" }}
         className="text-primary"
       >
@@ -32,7 +32,7 @@ export const Internships = () => {
       </h2>
       <article
         style={{ paddingLeft: "10%", paddingRight: "10%", paddingTop: "2%" }}
-        id="whole-experience"
+        id="whole-internships"
       >
         <div style={{ paddingBottom: "2%" }}>
           <div className="scroll-container hidden-elementsu">
