@@ -1,6 +1,5 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
-import galaxy from './Galaxy_store_logo.png'
 
 const LinkCard = props => {
   return (

@@ -1,14 +1,8 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useCallback } from "react";
 import { Link } from "react-router-dom";
-// Making the nav bar names bold on scroll
-var collapsed = 0;
 
 export const Header = () => {
-  useEffect(() => {
-    document.addEventListener("keydown", detectKeyDown, true);
-  }, []);
-
-  const detectKeyDown = (e) => {
+  const detectKeyDown = useCallback((e) => {
     console.log(e.key);
     if (Number(e.key) === 1) scrollToTarget("cover-image");
     if (Number(e.key) === 2) scrollToTarget("experiences-section");
@@ -17,7 +11,12 @@ export const Header = () => {
     if (Number(e.key) === 5) scrollToTarget("project-section");
     if (Number(e.key) === 6) scrollToTarget("a-resume");
     if (Number(e.key) === 7) scrollToTarget("connect");
-  };
+  }, []);
+
+  useEffect(() => {
+    document.addEventListener("keydown", detectKeyDown, true);
+    return () => document.removeEventListener("keydown", detectKeyDown, true);
+  }, [detectKeyDown]);
 
   const buttonRef = useRef(null);
 
