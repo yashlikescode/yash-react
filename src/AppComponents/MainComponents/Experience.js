@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./Experience.module.css";
 
 const experiences = [
   {
@@ -46,12 +47,12 @@ const experiences = [
 
 export const Experience = () => {
   return (
-    <section id="experiences-section" style={{ padding: "6% 10%" }}>
+    <section id="experiences-section" style={{ padding: "6% 10% 0 10%" }}>
       <h2 className="text-primary">Experience</h2>
       {experiences.map((exp, idx) => (
-        <div key={idx} className="experience-item" style={{ marginBottom: "2rem" }}>
+        <div key={idx} className={styles.experienceItem}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
-            <h3 style={{ margin: 0 }}>{exp.role} | {exp.company}</h3>
+            <div style={{ margin: 0, fontSize: "1.1rem", fontWeight: "bold" }}>{exp.role} | {exp.company}</div>
             <span style={{ fontStyle: "italic", color: "#666" }}>{exp.date}</span>
           </div>
           <ul style={{ marginTop: "0.5rem" }}>
