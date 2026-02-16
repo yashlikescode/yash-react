@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { ProjectCards } from "./ProjectAssetss/ProjectCards.js";
 import cppStlLogo from "./ProjectAssetss/cpp-stl-logo.png";
 import drivinglogo from "./ProjectAssetss/new-driving.png";
 import matrixlogo from "./ProjectAssetss/matrix-man-logo.png";
@@ -13,11 +12,7 @@ import reactgate from "./ProjectAssetss/reactgate.png";
 import openpap from "./ProjectAssetss/openpap.jpg";
 //---------------------------------------------------------------------------
 export const Projects = () => {
-  const [webState, setWebState] = useState(true);
-  const [androidState, setAndroidState] = useState(false);
-  const [winState, setWinState] = useState(false);
-  const [pythonState, setPythonState] = useState(false);
-  const [show, setShow] = useState("web");
+  const [active, setActive] = useState("web");
 
   const projects = [
     {
@@ -112,46 +107,86 @@ export const Projects = () => {
     },
   ];
 
-  const tabPressed = (tab) => {
-    if (tab === "Web") {
-      setWebState(true);
-      setAndroidState(false);
-      setWinState(false);
-      setPythonState(false);
-      setShow("web");
-    } else if (tab === "Android") {
-      setWebState(false);
-      setAndroidState(true);
-      setWinState(false);
-      setPythonState(false);
-      setShow("android");
-    } else if (tab === "Windows") {
-      setWebState(false);
-      setAndroidState(false);
-      setWinState(true);
-      setPythonState(false);
-      setShow("windows");
-    } else {
-      setWebState(false);
-      setAndroidState(false);
-      setWinState(false);
-      setPythonState(true);
-      setShow("python");
-    }
-  };
+  const categories = [
+    { id: "web", label: "Web" },
+    { id: "android", label: "Android" },
+    { id: "windows", label: "Windows" },
+    { id: "python", label: "Python" },
+  ];
 
   const renderCards = () => {
     return projects
-      .filter((project) => project.type === show)
-      .map((project, index) => <ProjectCards key={index} project={project} />);
+      .filter((project) => project.type === active)
+      .map((p, i) => (
+        <div className="col-12 col-md-6 col-lg-4 mb-4" key={i}>
+          <div
+            className="card h-100"
+            style={{
+              minHeight: 160,
+              overflow: "hidden",
+              borderRadius: "0.5rem",
+            }}
+          >
+            <div className="row g-0 h-100 align-items-center p-2">
+              <div className="col-4 p-2">
+                <img
+                  src={p.image}
+                  alt={p.title}
+                  className="img-fluid"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    borderRadius: "0.4rem",
+                    border: "1px solid rgb(0,0,0)",
+                  }}
+                />
+              </div>
+              <div className="col-8">
+                <div className="card-body p-2">
+                  <h5 className="card-title mb-1">{p.title}</h5>
+                  <p
+                    className="card-text small text-muted mb-2"
+                    style={{ fontSize: 12 }}
+                  >
+                    {p.desc}
+                  </p>
+                  <div className="d-flex gap-2 mb-2">
+                    {p.link && (
+                      <a
+                        href={p.link}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="btn btn-sm btn-outline-primary"
+                      >
+                        Live
+                      </a>
+                    )}
+                    {p.repoLink && (
+                      <a
+                        href={p.repoLink}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="btn btn-sm btn-outline-secondary"
+                      >
+                        Repo
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      ));
   };
 
   return (
     <div className="whole-proj">
       <h2
         id="project-section"
-        className="text-primary "
-        style={{ paddingBottom: "2%", paddingLeft: "10%", paddingTop: "6%" }}
+        className="text-primary"
+        style={{ padding: "3% 0 1% 10%" }}
       >
         Projects
       </h2>
@@ -159,109 +194,38 @@ export const Projects = () => {
       <article
         id="all-projects"
         style={{
-          margin: "0 12%",
-          backgroundColor: "rgb(63, 127, 231,0.1)",
-          borderRadius: "0.7em",
+          margin: "0 8%",
+          backgroundColor: "rgba(63,127,231,0.06)",
+          borderRadius: "0.6rem",
         }}
       >
         <div
           className="container-fluid"
-          style={{
-            padding: "0",
-            border: "solid 2px rgb(63, 127, 231)",
-            height: "100%",
-          }}
-          id="hello"
+          style={{ padding: 0, border: "1px solid rgba(63,127,231,0.2)" }}
         >
-          <div className="row custom-no-gutters select-proj">
-            <div className="col-3  myposter" onClick={() => tabPressed("Web")}>
-              <h4
-                style={{
-                  borderBottom: webState
-                    ? "solid 1px rgb(63, 127, 231)"
-                    : "none",
-                  height: "100%",
-                  textAlign: "center",
-                  backgroundColor: `rgb(63, 127, 231,${webState ? 0.2 : 0.1})`,
-                  paddingTop: "1em",
-                  paddingBottom: "1em",
-                }}
-                className="ProjectCategory"
+          <div
+            className="d-flex flex-wrap gap-2 p-3 align-items-center"
+            style={{ borderBottom: "1px solid rgba(0,0,0,0.04)" }}
+          >
+            {categories.map((c) => (
+              <button
+                key={c.id}
+                onClick={() => setActive(c.id)}
+                className={`btn btn-sm ${active === c.id ? "btn-primary" : "btn-outline-primary"}`}
               >
-                Web
-              </h4>
-            </div>
-            <div
-              className="col-3  myposter"
-              onClick={() => tabPressed("Android")}
-            >
-              <h4
-                style={{
-                  borderBottom: androidState
-                    ? "solid 1px rgb(63, 127, 231)"
-                    : "none",
-                  height: "100%",
-                  borderLeft: "solid 1px rgb(63, 127, 231,0.2)",
-                  borderRight: "solid 1px rgb(63, 127, 231,0.2)",
-                  textAlign: "center",
-                  backgroundColor: `rgb(63, 127, 231,${
-                    androidState ? 0.2 : 0.1
-                  })`,
-                  paddingTop: "1em",
-                  paddingBottom: "1em",
-                }}
-                className="ProjectCategory"
-              >
-                Android
-              </h4>
-            </div>
-            <div
-              className="col-3  myposter"
-              onClick={() => tabPressed("Windows")}
-            >
-              <h4
-                style={{
-                  borderBottom: winState
-                    ? "solid 1px rgb(63, 127, 231)"
-                    : "none",
-                  height: "100%",
-                  borderLeft: "solid 1px rgb(63, 127, 231,0.2)",
-                  borderRight: "solid 1px rgb(63, 127, 231,0.2)",
-                  textAlign: "center",
-                  backgroundColor: `rgb(63, 127, 231,${winState ? 0.2 : 0.1})`,
-                  paddingTop: "1em",
-                  paddingBottom: "1em",
-                }}
-                className="ProjectCategory"
-              >
-                Windows
-              </h4>
-            </div>
-            <div
-              className="col-3 myposter"
-              onClick={() => tabPressed("Python")}
-            >
-              <h4
-                style={{
-                  borderBottom: pythonState
-                    ? "solid 1px rgb(63, 127, 231)"
-                    : "none",
-                  height: "100%",
-                  textAlign: "center",
-                  backgroundColor: `rgb(63, 127, 231,${
-                    pythonState ? 0.2 : 0.1
-                  })`,
-                  paddingTop: "1em",
-                  paddingBottom: "1em",
-                }}
-                className="ProjectCategory"
-              >
-                Python
-              </h4>
+                {c.label}
+              </button>
+            ))}
+            <div className="ms-auto text-muted small">
+              Showing{" "}
+              <strong>
+                {projects.filter((p) => p.type === active).length}
+              </strong>{" "}
+              results
             </div>
           </div>
 
-          <div className="container-fluid project-panel">
+          <div className="container-fluid p-3">
             <div className="row">{renderCards()}</div>
           </div>
         </div>
