@@ -43,7 +43,7 @@ export const Internships = () => {
               </h6>
               <span>August 2021 - September 2021</span>
               <button
-                class="btn btn-link expbut"
+                className="btn btn-link expbut"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#collapseExample"
@@ -53,7 +53,7 @@ export const Internships = () => {
               >
                 {isExpanded ? "Show Less ⟰" : "Show More ⟱"}
               </button>
-              <div class="collapse" id="collapseExample">
+              <div className="collapse" id="collapseExample">
                 <p>
                   <ul>
                     <li>
@@ -109,11 +109,12 @@ export const Internships = () => {
             <div className="scroll-element">
               <h4>Summer Internship - Electric Loco Shed, Vadodara</h4>
               <h6 className="card-subtitle mb-2 text-body-secondary">
-                Topic: Testing Setup for Digital I/O Cards of TCN based VCUs{" "}
+                Topic: Testing Setup for Digital I/O Cards of TCN based
+                VCUs{" "}
               </h6>
               <span>June 2022 - July 2022</span>
               <button
-                class="btn btn-link expbut"
+                className="btn btn-link expbut"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#collapseExample2"
@@ -123,7 +124,7 @@ export const Internships = () => {
               >
                 {isExpanded2 ? "Show Less ⟰" : "Show More ⟱"}
               </button>
-              <div class="collapse" id="collapseExample2">
+              <div className="collapse" id="collapseExample2">
                 <p>
                   <ul>
                     <li>
@@ -177,7 +178,7 @@ export const Internships = () => {
               </h6>
               <span>June 2023 - Jul 2023</span>
               <button
-                class="btn btn-link expbut"
+                className="btn btn-link expbut"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#collapseExample3"
@@ -187,7 +188,7 @@ export const Internships = () => {
               >
                 {isExpanded3 ? "Show Less ⟰" : "Show More ⟱"}
               </button>
-              <div class="collapse" id="collapseExample3">
+              <div className="collapse" id="collapseExample3">
                 <p>
                   <ul>
                     <li>

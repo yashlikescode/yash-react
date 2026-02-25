@@ -4,9 +4,10 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 <url>
   <loc>https://www.yashlikescode.in/</loc>
-  <lastmod>2024-11-12T18:12:48+00:00</lastmod>
+  <lastmod>2026-02-25T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>1.0</priority>
 </url>
 </urlset>
