@@ -129,7 +129,7 @@ export const Home = () => {
             Hii, I'm <span className="myName">Yashasvi,</span>
           </h2>
           <p style={{ fontSize: "20px", margin: 0 }}>
-            Full-Stack Developer — React, Angular, Spring Boot &amp; Node
+            Full-Stack and Gen AI Developer
           </p>
         </div>
       </article>
