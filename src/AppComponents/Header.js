@@ -13,7 +13,7 @@ export const Header = () => {
     if (Number(e.key) === 7) scrollToTarget("connect");
   }, []);
 
-  useEffect(() => {
+  useEffect(() =>{
     document.addEventListener("keydown", detectKeyDown, true);
     return () => document.removeEventListener("keydown", detectKeyDown, true);
   }, [detectKeyDown]);
