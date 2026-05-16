@@ -1,6 +1,13 @@
 .experienceItem {
-  margin-bottom: 2rem;
-  background-color: #e4f5fe;
-  padding: 0.5cm;
-  border-radius: 0.2cm;
+    margin: 1.5rem 0;
+    padding: 0.5cm;
+    border-radius: 0.2cm;
+    box-shadow: 0 0 15px #c7c7c7;
+}
+
+.experienceItem:hover {
+    margin: 1.5rem 0;
+    padding: 0.5cm;
+    border-radius: 0.2cm;
+    box-shadow: 0 0 15px #a7a7a7;
 }

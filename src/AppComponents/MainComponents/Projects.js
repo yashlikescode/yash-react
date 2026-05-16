@@ -182,19 +182,19 @@ export const Projects = () => {
   };
 
   return (
-    <div className="whole-proj">
+    <div className="whole-proj" style={{ padding: "3% 0" }}
+        id="project-section">
       <h2
-        id="project-section"
         className="text-primary"
         style={{ padding: "3% 0 1% 10%" }}
       >
-        Projects
+        Personal Projects
       </h2>
 
       <article
         id="all-projects"
         style={{
-          margin: "0 8%",
+          margin: "0 10%",
           backgroundColor: "rgba(63,127,231,0.06)",
           borderRadius: "0.6rem",
         }}

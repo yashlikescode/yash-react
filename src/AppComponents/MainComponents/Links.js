@@ -56,7 +56,7 @@ import LinkCard from './LinkCard';
       link: "https://stackoverflow.com/users/15393115/yashasvi",
     },
     {
-      title: "Amazon App Store",
+      title: "Amazon Apps",
       viewboxA: 260,
       viewboxB: 260,
       fill: "#000000",

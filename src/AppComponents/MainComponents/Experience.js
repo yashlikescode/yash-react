@@ -7,27 +7,23 @@ const experiences = [
     company: "Tata Consultancy Services",
     date: "Jan 2025 - Present",
     bullets: [
-      "Progressed from Angular developer to full-stack role across Angular and Spring Boot",
-      "Led multiple Angular and Spring Boot version upgrades to improve stability and maintainability",
-      "Delivered end-to-end features covering business logic, UI/UX styling, and core front-end functionality",
-      "Built an Electron-based internal tool to streamline deployment workflows and eliminate repetitive tasks",
-      "Refactored the application to meet accessibility standards, transforming a previously inaccessible platform",
-      "Eliminated ~90% of SonarQube issues through systematic code quality and technical debt reduction",
+      "Designed and built scalable system architecture for 6 features across APIs, UI, and services, reducing manual workflow effort by 30%",
+      "Remediated 100+ vulnerabilities and reduced SonarQube-reported issues by 90% via structured refactoring",
+      "Deployed AI-assisted code analysis pipelines, increasing maintainability scores by 20%",
+      "Guided 2 junior developers over 10 sprint cycles, improving delivery consistency and code standards",
+      "Designed CI/CD architecture integrating AI-based analysis pipelines, reducing defect leakage by 20%",
     ],
-    tech: "Angular, Python, SpringBoot, Java, TypeScript, JavaScript, Postgres, Electron",
   },
   {
     role: "Web Development",
     company: "Aventra Systems",
     date: "Oct 2024 - Jan 2025",
     bullets: [
-      "Built a mobile-first, WCAG-aligned website to support early-stage startup growth",
-      "Designed and implemented a digital efficiency scoring model to assess client systems",
-      "Developed HRMS status–driven recommendation logic to guide operational improvements",
-      "Iterated features using agile sprints with continuous client feedback loops",
-      "Optimized on-page SEO structure and performance to boost organic visibility",
+      "Architected a scalable multi-tenant system handling 100+ client workflows with 35% improved performance",
+      "Delivered onboarding flow reducing requirement gathering time by 60%",
+      "Streamlined onboarding process cutting processing time by 90%",
+      "Partnered with 5+ stakeholders delivering 10+ feature updates",
     ],
-    tech: "JavaScript, HTML, Tailwind, CSS",
   },
   {
     role: "Web Development",
@@ -41,7 +37,6 @@ const experiences = [
       "Collaborated in an agile setup, refining deliverables through regular stakeholder reviews",
       "Executed SEO enhancements improving crawlability and search ranking performance",
     ],
-    tech: "React.Js, HTML, CSS, Bootstrap, JavaScript",
   },
 ];
 
@@ -60,7 +55,6 @@ export const Experience = () => {
               <li key={i}>{b}</li>
             ))}
           </ul>
-          <div style={{ marginTop: "0.25rem", color: "#444" }}>Tech: {exp.tech}</div>
         </div>
       ))}
     </section>

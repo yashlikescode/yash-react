@@ -7,10 +7,9 @@ export const Header = () => {
     if (Number(e.key) === 1) scrollToTarget("cover-image");
     if (Number(e.key) === 2) scrollToTarget("experiences-section");
     if (Number(e.key) === 3) scrollToTarget("whole-certifications");
-    if (Number(e.key) === 4) scrollToTarget("all-educations");
-    if (Number(e.key) === 5) scrollToTarget("project-section");
-    if (Number(e.key) === 6) scrollToTarget("a-resume");
-    if (Number(e.key) === 7) scrollToTarget("connect");
+    if (Number(e.key) === 4) scrollToTarget("project-section");
+    if (Number(e.key) === 5) scrollToTarget("social-section");
+    if (Number(e.key) === 6) scrollToTarget("connect");
   }, []);
 
   useEffect(() =>{
@@ -116,18 +115,6 @@ export const Header = () => {
                 </li>
                 <li className="nav-item">
                   <Link
-                    onClick={() => scrollToTarget("all-educations")}
-                    id="nav-edu"
-                    style={{ color: "white" }}
-                    className="nav-link active btn"
-                    aria-current="page"
-                  >
-                    Education
-                    <span className="keyhelp">4</span>
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link
                     onClick={() => scrollToTarget("project-section")}
                     id="nav-project"
                     style={{ color: "white" }}
@@ -135,19 +122,19 @@ export const Header = () => {
                     aria-current="page"
                   >
                     Projects
-                    <span className="keyhelp">5</span>
+                    <span className="keyhelp">4</span>
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link
-                    onClick={() => scrollToTarget("a-resume")}
-                    id="nav-resume"
+                    onClick={() => scrollToTarget("social-section")}
+                    id="nav-social"
                     style={{ color: "white" }}
                     className="nav-link active btn"
                     aria-current="page"
                   >
-                    Resume
-                    <span className="keyhelp">6</span>
+                    Links
+                    <span className="keyhelp">5</span>
                   </Link>
                 </li>
                 <li className="nav-item">
@@ -159,7 +146,7 @@ export const Header = () => {
                     aria-current="page"
                   >
                     Connect With Me
-                    <span className="keyhelp">7</span>
+                    <span className="keyhelp">6</span>
                   </Link>
                 </li>
               </ul>
