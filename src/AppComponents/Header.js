@@ -1,7 +1,13 @@
 import React, { useEffect, useRef, useCallback } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { setView } from "../store/viewSlice";
 
 export const Header = () => {
+  const dispatch = useDispatch();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const currentView = useSelector((state) => state.view.currentView);
   const detectKeyDown = useCallback((e) => {
     console.log(e.key);
     if (Number(e.key) === 1) scrollToTarget("cover-image");
@@ -12,10 +18,18 @@ export const Header = () => {
     if (Number(e.key) === 6) scrollToTarget("connect");
   }, []);
 
-  useEffect(() =>{
+  useEffect(() => {
     document.addEventListener("keydown", detectKeyDown, true);
     return () => document.removeEventListener("keydown", detectKeyDown, true);
   }, [detectKeyDown]);
+
+  useEffect(() => {
+    if (location.pathname === "/photo" && currentView !== "photos") {
+      dispatch(setView("photos"));
+    } else if (location.pathname === "/" && currentView !== "software") {
+      dispatch(setView("software"));
+    }
+  }, [location.pathname, currentView, dispatch]);
 
   const buttonRef = useRef(null);
 
@@ -40,9 +54,9 @@ export const Header = () => {
       >
         <div className="container-fluid">
           <Link
+            to="/"
             style={{ color: "white", fontSize: "x-large" }}
             className="navbar-brand"
-            href="#"
           >
             <h1 style={{ fontSize: "x-large" }}>Yashasvi</h1>
           </Link>
@@ -77,77 +91,133 @@ export const Header = () => {
                 style={{ fontSize: "large" }}
                 className="navbar-nav justify-content-end flex-grow-1 pe-3"
               >
+                {currentView == "software" && (
+                  <>
+                    <li className="nav-item">
+                      <button
+                        onClick={() => scrollToTarget("cover-image")}
+                        id="nav-home"
+                        style={{
+                          color: "white",
+                          background: "none",
+                          border: "none",
+                          padding: 0,
+                        }}
+                        className="nav-link active btn"
+                        aria-current="page"
+                      >
+                        Home
+                        <span className="keyhelp">1</span>
+                      </button>
+                    </li>
+                    <li className="nav-item">
+                      <button
+                        onClick={() => scrollToTarget("experiences-section")}
+                        id="nav-exp"
+                        style={{
+                          color: "white",
+                          background: "none",
+                          border: "none",
+                          padding: 0,
+                        }}
+                        className="nav-link active btn"
+                        aria-current="page"
+                      >
+                        Experience
+                        <span className="keyhelp">2</span>
+                      </button>
+                    </li>
+                    <li className="nav-item">
+                      <button
+                        onClick={() => scrollToTarget("whole-certifications")}
+                        id="nav-cert"
+                        style={{
+                          color: "white",
+                          background: "none",
+                          border: "none",
+                          padding: 0,
+                        }}
+                        className="nav-link active btn"
+                        aria-current="page"
+                      >
+                        Certifications
+                        <span className="keyhelp">3</span>
+                      </button>
+                    </li>
+                    <li className="nav-item">
+                      <button
+                        onClick={() => scrollToTarget("project-section")}
+                        id="nav-project"
+                        style={{
+                          color: "white",
+                          background: "none",
+                          border: "none",
+                          padding: 0,
+                        }}
+                        className="nav-link active btn"
+                        aria-current="page"
+                      >
+                        Projects
+                        <span className="keyhelp">4</span>
+                      </button>
+                    </li>
+                    <li className="nav-item">
+                      <button
+                        onClick={() => scrollToTarget("social-section")}
+                        id="nav-social"
+                        style={{
+                          color: "white",
+                          background: "none",
+                          border: "none",
+                          padding: 0,
+                        }}
+                        className="nav-link active btn"
+                        aria-current="page"
+                      >
+                        Links
+                        <span className="keyhelp">5</span>
+                      </button>
+                    </li>
+                    <li className="nav-item">
+                      <button
+                        onClick={() => scrollToTarget("connect")}
+                        id="nav-contact"
+                        style={{
+                          color: "white",
+                          background: "none",
+                          border: "none",
+                          padding: 0,
+                        }}
+                        className="nav-link active btn btn-link"
+                        aria-current="page"
+                      >
+                        Connect With Me
+                        <span className="keyhelp">6</span>
+                      </button>
+                    </li>
+                  </>
+                )}
                 <li className="nav-item">
-                  <Link
-                    onClick={() => scrollToTarget("cover-image")}
-                    id="nav-home"
-                    style={{ color: "white" }}
-                    className="nav-link active btn"
-                    aria-current="page"
-                  >
-                    Home
-                    <span className="keyhelp">1</span>
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link
-                    onClick={() => scrollToTarget("experiences-section")}
-                    id="nav-exp"
-                    style={{ color: "white" }}
-                    className="nav-link active btn"
-                    aria-current="page"
-                  >
-                    Experience
-                    <span className="keyhelp">2</span>
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link
-                    onClick={() => scrollToTarget("whole-certifications")}
-                    id="nav-cert"
-                    style={{ color: "white" }}
-                    className="nav-link active btn"
-                    aria-current="page"
-                  >
-                    Certifications
-                    <span className="keyhelp">3</span>
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link
-                    onClick={() => scrollToTarget("project-section")}
-                    id="nav-project"
-                    style={{ color: "white" }}
-                    className="nav-link active btn"
-                    aria-current="page"
-                  >
-                    Projects
-                    <span className="keyhelp">4</span>
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link
-                    onClick={() => scrollToTarget("social-section")}
-                    id="nav-social"
-                    style={{ color: "white" }}
-                    className="nav-link active btn"
-                    aria-current="page"
-                  >
-                    Links
-                    <span className="keyhelp">5</span>
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link
-                    onClick={() => scrollToTarget("connect")}
-                    id="nav-contact"
-                    style={{ color: "white" }}
-                    className="nav-link active btn btn-link"
-                    aria-current="page"
-                  >
-                    Connect With Me
-                    <span className="keyhelp">6</span>
-                  </Link>
+                  <div className="toggle-container">
+                    <button
+                      onClick={() => {
+                        navigate("/");
+                        dispatch(setView("software"));
+                      }}
+                      className={`toggle-button ${currentView === "software" && "active"}`}
+                    >
+                      Software
+                    </button>
+                    <button
+                      onClick={() => {
+                        navigate("/photo");
+                        dispatch(setView("photos"));
+                      }}
+                      className={`toggle-button ${currentView === "photos" && "active"}`}
+                    >
+                      Photography
+                    </button>
+                  </div>
                 </li>
               </ul>
             </div>

@@ -426,21 +426,23 @@ footer {
   width: 100vw;
 }
 .nav-item {
-  margin-right: 0.2cm;
+    margin-right: 0.7cm;
+    font-size: 16px;
+    display: flex;
 }
 .expbut {
   display: block;
   transform: translateX(-0.3cm);
 }
 .keyhelp {
-  background-color: white;
-  color: black;
-  padding: 0 0.1cm 0.05cm 0.1cm;
-  font-size: 0.9rem;
-  border-radius: 0.1cm;
-  margin-left: 0.1cm;
-  opacity: 0.4;
-  font-weight: 500;
+    background-color: white;
+    color: black;
+    padding: 0.1cm 0.2cm 0.1cm 0.2cm;
+    font-size: 0.7rem;
+    border-radius: 0.1cm;
+    margin-left: 0.1cm;
+    opacity: 0.4;
+    font-weight: 500;
 }
 
 .redes {
@@ -2822,4 +2824,31 @@ footer {
   display: flex;
   justify-content: center;
   margin-top: 20px;
+}
+
+.toggle-container {
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+  padding: 5px;
+  border-radius: 25px;
+  box-shadow: 0 0px 5px white;
+}
+
+.toggle-container:hover {
+  box-shadow: 0 0px 8px white;
+}
+
+.toggle-button{
+  border:none;
+  background-color: transparent;
+  font-size: 16px;
+  padding: 5px 15px;
+  border-radius: 20px;
+}
+
+.toggle-button.active {
+  background-color: #3f7fe7;
+  color: white;
+  box-shadow: 0 0px 5px #3f7fe7;
 }
