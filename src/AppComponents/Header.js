@@ -1,12 +1,11 @@
 import React, { useEffect, useRef, useCallback } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setView } from "../store/viewSlice";
 
 export const Header = () => {
   const dispatch = useDispatch();
   const location = useLocation();
-  const navigate = useNavigate();
   const currentView = useSelector((state) => state.view.currentView);
   const detectKeyDown = useCallback((e) => {
     console.log(e.key);
@@ -199,24 +198,22 @@ export const Header = () => {
                 )}
                 <li className="nav-item">
                   <div className="toggle-container">
-                    <button
-                      onClick={() => {
-                        navigate("/");
-                        dispatch(setView("software"));
-                      }}
-                      className={`toggle-button ${currentView === "software" && "active"}`}
+                    <Link
+                      to="/"
+                      onClick={() => dispatch(setView("software"))}
+                      style={{ textDecoration: "none" }}
+                      className={`toggle-button ${currentView === "software" ? "active" : ""}`}
                     >
                       Software
-                    </button>
-                    <button
-                      onClick={() => {
-                        navigate("/photo");
-                        dispatch(setView("photos"));
-                      }}
-                      className={`toggle-button ${currentView === "photos" && "active"}`}
+                    </Link>
+                    <Link
+                      to="/photo"
+                      onClick={() => dispatch(setView("photos"))}
+                      style={{ textDecoration: "none" }}
+                      className={`toggle-button ${currentView === "photos" ? "active" : ""}`}
                     >
                       Photography
-                    </button>
+                    </Link>
                   </div>
                 </li>
               </ul>

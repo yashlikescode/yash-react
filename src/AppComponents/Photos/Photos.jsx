@@ -68,6 +68,9 @@ function Photos() {
       <h1 className="page-title" style={{ margin: "5rem 10% 1rem 10%" }}>
         Photography Portfolio
       </h1>
+      <p className="page-description" style={{ margin: "0 10% 2rem 10%", lineHeight: 1.7, color: "#555" }}>
+        Explore a curated photography portfolio showcasing vibrant street scenes, sweeping landscapes, and striking portraits across travel, architecture, and nature. Use the tag filters below to discover every photo category and enjoy the visual journey.
+      </p>
       <div className="filters-wrapper">
         <span className="filters-title">Tags</span>
 
