@@ -91,7 +91,7 @@ export const Header = () => {
                 style={{ fontSize: "large" }}
                 className="navbar-nav justify-content-end flex-grow-1 pe-3"
               >
-                {currentView == "software" && (
+                {currentView === "software" && (
                   <>
                     <li className="nav-item">
                       <button
