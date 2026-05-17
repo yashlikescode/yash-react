@@ -108,7 +108,7 @@ function Photos() {
                   <ImageListItem>
                     <img src={displayUrl} alt={item.name} loading="lazy" />
                     <ImageListItemBar
-                      subtitle={item.name.substring(0, item.name.length - 4)}
+                      subtitle={item.name.substring(0, item.name.length - 5)}
                       actionIcon={
                         <IconButton
                           sx={{ color: "rgba(255, 255, 255, 0.54)" }}
