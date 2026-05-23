@@ -29,7 +29,7 @@ body {
 .text-overlay {
   position: absolute;
   top: 30%;
-  left: 30%;
+  width: 100%;
   color: white;
   display: grid;
   place-items: center;
@@ -300,11 +300,28 @@ footer {
   }
   .text-overlay {
     position: absolute;
-    top: 30%;
-    left: 1.5cm;
-    right: 1.5cm;
+    top: 20%;
+    left: 16px;
+    right: 16px;
+    width: auto;
+    max-width: calc(100vw - 32px);
+    padding: 18px 16px;
+    box-sizing: border-box;
     color: white;
-    text-align: left;
+    text-align: center;
+    border-radius: 20px;
+    transform: none;
+  }
+
+  .buttons-container {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+
+  .material-symbols-outlined {
+    left: 50%;
+    transform: translateX(-50%) scale(0.7);
   }
 }
 
@@ -426,23 +443,23 @@ footer {
   width: 100vw;
 }
 .nav-item {
-    margin-right: 0.7cm;
-    font-size: 16px;
-    display: flex;
+  margin-right: 0.7cm;
+  font-size: 16px;
+  display: flex;
 }
 .expbut {
   display: block;
   transform: translateX(-0.3cm);
 }
 .keyhelp {
-    background-color: white;
-    color: black;
-    padding: 0.1cm 0.2cm 0.1cm 0.2cm;
-    font-size: 0.7rem;
-    border-radius: 0.1cm;
-    margin-left: 0.1cm;
-    opacity: 0.4;
-    font-weight: 500;
+  background-color: white;
+  color: black;
+  padding: 0.1cm 0.2cm 0.1cm 0.2cm;
+  font-size: 0.7rem;
+  border-radius: 0.1cm;
+  margin-left: 0.1cm;
+  opacity: 0.4;
+  font-weight: 500;
 }
 
 .redes {
@@ -2839,8 +2856,8 @@ footer {
   box-shadow: 0 0px 8px white;
 }
 
-.toggle-button{
-  border:none;
+.toggle-button {
+  border: none;
   background-color: transparent;
   font-size: 16px;
   padding: 5px 15px;

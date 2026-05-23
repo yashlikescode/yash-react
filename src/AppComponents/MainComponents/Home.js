@@ -1,6 +1,32 @@
 import React from "react";
 import expand from "./main_assets/expand-more.png"; // Adjust the path as needed
 import { Link } from "react-router-dom";
+import {
+  SiReact,
+  SiNodedotjs,
+  SiMongodb,
+  SiOpenai,
+  SiAngular,
+  SiDocker,
+} from "react-icons/si";
+
+import { Stack, Chip } from "@mui/material";
+
+const chips = [
+  {
+    label: "AI",
+    icon: <SiOpenai size={16} />,
+    border: "#10A37F",
+    bg: "rgba(16,163,127,0.12)",
+  },
+  {
+    label: "Full-Stack",
+    icon: <SiNodedotjs size={16} />,
+    border: "#7bfb61",
+    bg: "rgba(97,218,251,0.12)",
+  },
+];
+
 export const Home = () => {
   const scrollToTarget = (elementId) => {
     const targetElement = document.getElementById(elementId);
@@ -82,12 +108,59 @@ export const Home = () => {
             transition: "transform 4s ease",
           }}
         >
-          <h2 style={{ fontSize: "70px", margin: 0 }}>
+          <h2
+            style={{
+              fontSize: "clamp(2.5rem, 8vw, 4.5rem)",
+              lineHeight: 1.05,
+              margin: 0,
+            }}
+          >
             Hii, I'm <span className="myName">Yashasvi,</span>
           </h2>
-          <p style={{ fontSize: "20px", margin: 0 }}>
-            Making businesses win with Full-Stack & Gen AI.
+          <p
+            style={{
+              fontSize: "clamp(1rem, 2.8vw, 1.25rem)",
+              marginBottom: "20px",
+              lineHeight: 1.5,
+            }}
+          >
+            Helping businesses and organizations grow, perform better, and save
+            time.
           </p>
+          <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap>
+            {chips.map((chip) => (
+              <Chip
+                key={chip.label}
+                icon={chip.icon}
+                label={chip.label}
+                variant="outlined"
+                sx={{
+                  color: "#fff",
+                  borderColor: "rgba(255,255,255,0.08)",
+                  background: chip.bg,
+                  backdropFilter: "blur(10px)",
+                  borderRadius: "15px",
+                  px: 1.8,
+                  py: 2.2,
+                  margin: "0 9px",
+                  fontWeight: 500,
+                  transition: "all 0.10s ease",
+
+                  "& .MuiChip-icon": {
+                    color: chip.border,
+                    ml: "10px",
+                  },
+
+                  "&:hover": {
+                    borderColor: chip.border,
+                    transform: "translateY(-2px)",
+                    background: chip.bg,
+                    boxShadow: `0 0 18px ${chip.border}40`,
+                  },
+                }}
+              />
+            ))}
+          </Stack>
           <div className="buttons-container">
             <Link
               rel="noopener noreferrer"
