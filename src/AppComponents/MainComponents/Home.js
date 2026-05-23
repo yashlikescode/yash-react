@@ -2,12 +2,8 @@ import React from "react";
 import expand from "./main_assets/expand-more.png"; // Adjust the path as needed
 import { Link } from "react-router-dom";
 import {
-  SiReact,
   SiNodedotjs,
-  SiMongodb,
-  SiOpenai,
-  SiAngular,
-  SiDocker,
+  SiOpenai
 } from "react-icons/si";
 
 import { Stack, Chip } from "@mui/material";
