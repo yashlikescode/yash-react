@@ -160,7 +160,7 @@ export const Home = () => {
           <div className="buttons-container">
             <Link
               rel="noopener noreferrer"
-              to="./Yashasvi_Resume_4_3_7.pdf"
+              to="./Resume.pdf"
               target="_blank"
               style={{ textDecoration: "none" }}
             >

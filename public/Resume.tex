@@ -1,0 +1,190 @@
+%-------------------------
+% Resume in Latex
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+
+
+% Custom commands
+\newcommand{\resumeItem}[1]{\item\small{{#1 \vspace{-2pt}}}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+  \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & \textbf{\small #2} \\
+    \textit{\small#3} & \textit{\small #4} \\
+  \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+  \item
+  \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+    \small#1 & \textbf{\small #2}\\
+  \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[label=\textbullet]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    {\Huge \scshape Yashasvi} \\ \vspace{1pt}
+    \small \faPhone\ +91 8540904380~
+\href{mailto:kmryashasvi@gmail.com}{\faEnvelope\ \underline{kmryashasvi@gmail.com}} ~ 
+    \href{https://linkedin.com/in/kmryashasvi}{\faLinkedin\ \underline{linkedin.com/in/kmryashasvi}} ~
+    \href{https://makingyou.win}{\faGlobe\ \underline{makingyou.win}}
+    \vspace{-8pt}
+\end{center}
+
+%-----------SUMMARY-----------
+\section{Summary}
+\resumeSubHeadingListStart
+\resumeItem{Full-Stack Developer with 3 years of experience building scalable web platforms, enterprise applications, and AI-enabled systems. Skilled in Angular, React, Spring Boot, Node.js, and FastAPI with experience across frontend architecture, backend services, databases, and cloud deployments. Delivered performance optimizations, workflow automation, and AI-driven tooling across enterprise and freelance projects.}
+\resumeSubHeadingListEnd
+\vspace{-10pt}
+
+%-----------SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+\small{\item{
+\textbf{Languages}{: TypeScript, JavaScript, Python, Java, SQL (PL/SQL), C/C++)} \\
+\textbf{Frontend}{: Angular, React, RxJS, NgRx, Redux, Context API, Tailwind CSS, Bootstrap, Angular Material, Material UI} \\
+\textbf{Backend}{: Node.js, Spring Boot, FastAPI, Django, REST APIs, GraphQL, MVC} \\
+\textbf{Databases}{: PostgreSQL, MySQL, MongoDB, Redis} \\
+\textbf{Cloud, DevOps \& Engineering}{: Git, Docker, AWS, Azure, Linux, CI/CD, Microservices, System Design} \\
+\textbf{AI/ML}{: LangChain, RAG, NLP, Prompt Engineering, Agentic AI, Custom AI Agents, MCP}
+}}
+\end{itemize}
+\vspace{-12pt}
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{Tata Consultancy Services}{Jan 2025 -- Present}
+{Full-Stack and Gen AI Developer}{}
+\resumeItemListStart
+\resumeItem{Architected 6 enterprise features across Angular, Spring Boot, and backend services, reducing manual effort by 30\%}
+\resumeItem{Optimized PostgreSQL queries and Redis caching strategies, enhanced application responsiveness and throughput}
+\resumeItem{Built Python AI automation pipelines for code analysis batches, improving maintainability scores by 20\%}
+\resumeItem{Remediated 100+ vulnerabilities through structured refactoring, reducing SonarQube-reported issues by 90\%}
+\resumeItem{Mentored 2 junior developers across sprint cycles, increasing delivery consistency and engineering standards}
+\resumeItemListEnd
+
+\vspace{2pt}
+
+\resumeSubheading
+{Apex Marketing}{Jun 2023 -- Jan 2025}
+{Full-Stack and Gen AI Developer}{}
+\resumeItemListStart
+\resumeItem{Developed scalable full-stack applications using React.js, Node.js, Express, and MongoDB, serving 5K+ monthly users}
+\resumeItem{Implemented RESTful APIs with authentication (JWT/OAuth), rate limiting, and role-based access control (RBAC)}
+\resumeItem{Engineered backend services with proper error handling, logging, and input validation, improving system reliability}
+\resumeItem{Integrated LLM-based AI services into production systems with efficient prompt engineering and response caching}
+\resumeItem{Designed database schemas, indexing strategies, and optimized queries, reducing API response time by 40\%}
+\resumeItem{Containerized applications using Docker and deployed to AWS (EC2, S3) and Vercel with CI/CD automation}
+\resumeItem{Worked in Agile teams for translating business requirements into scalable technical solutions across 10+ client projects}
+\resumeItemListEnd
+
+\vspace{2pt}
+
+\resumeSubheading
+{Aventra Systems}{Nov 2023 -- Jun 2024}
+{Full-Stack Developer - Freelancing}{}
+\resumeItemListStart
+\resumeItem{Developed WCAG-compliant Angular applications, improving mobile usability and accessibility by 40\%}
+\resumeItem{Engineered Django and MySQL backend modules supporting workflow automation and centralized operations}
+\resumeItem{Built a scoring engine evaluating systems across 10+ operational and performance parameters}
+\resumeItem{Delivered HRMS modules streamlining attendance and employee workflows for 35+ active users}
+\resumeItem{Optimized frontend-backend integration and database interactions, increasing maintainability and operational efficiency}
+\resumeItemListEnd
+
+\vspace{2pt}
+
+\resumeSubheading
+{REVY Environmental Solutions Pvt. Ltd}{May 2023 -- Oct 2023}
+{Full-Stack Developer - Freelancing}{}
+\resumeItemListStart
+\resumeItem{Architected a scalable multi-tenant platform supporting 100+ client workflows using Angular and FastAPI}
+\resumeItem{Designed onboarding workflows reducing requirement gathering effort by 60\%}
+\resumeItem{Streamlined operational processing pipelines, decreasing onboarding processing time by 90\%}
+\resumeItem{Built reusable API-driven frontend components improving scalability and development efficiency}
+\resumeItem{Collaborated with 5+ stakeholders delivering 10+ feature releases aligned with operational requirements}
+\resumeItem{Improved platform performance through optimized backend services and PostgreSQL database design}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+\vspace{-10pt}
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+\vspace{-7pt}
+\resumeProjectHeading
+{\textbf{Movies DB} $|$ \emph{Angular, Node, Express, TypeScript}}{}
+\resumeItemListStart
+\resumeItem{Engineered a web app to manage 50+ movie collections with persistent storage}
+\resumeItem{Integrated movie search handling 100+ API requests per session}
+\resumeItem{Developed full CRUD operations with $<200ms $ response time}
+\resumeItem{Enhanced UI flow increasing user interaction by ~30\%}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+\vspace{-12pt}
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{Gati Shakti Vishwavidyalaya}{2020 -- 2024}
+{B.Tech - Electronics and Communication Engineering (CGPA: 8.02)}{}
+\resumeSubHeadingListEnd
+
+%-----------CERTIFICATIONS-----------
+\section{Certifications}
+\resumeSubHeadingListStart
+\resumeItem{Front-End Development, Version Control, Linux}
+\resumeSubHeadingListEnd
+
+\end{document}
