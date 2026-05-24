@@ -14,7 +14,7 @@ jobs:
 
       - uses: xu-cheng/latex-action@v3
         with:
-          root_file: public/Resume.tex
+          root_file: Resume.tex
           working_directory: public
 
       - name: Commit PDF
